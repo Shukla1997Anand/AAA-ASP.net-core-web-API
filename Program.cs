@@ -23,4 +23,5 @@ namespace AAA_ASP.net_core_web_API
                     webBuilder.UseStartup<Startup>();
                 });
     }
+    //Master branch commit
 }
