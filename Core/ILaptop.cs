@@ -7,7 +7,7 @@ namespace AAA_ASP.net_core_web_API.Core
         public string AddingLaptop(Laptop laptop);
         public string DeleteLaptop(int laptopId);
         public string UpdateLaptop(Laptop laptop);  
-        public Laptop GetLaptop(int laptopId);
+        public Laptop GettingLaptop(int laptopId);
 
     }
 }

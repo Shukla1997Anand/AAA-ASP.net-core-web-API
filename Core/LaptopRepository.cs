@@ -33,14 +33,27 @@ namespace AAA_ASP.net_core_web_API.Core
             throw new System.NotImplementedException();
         }
 
-        public Laptop GetLaptop(int laptopId)
+        public Laptop GettingLaptop(int laptopId)
         {
-            throw new System.NotImplementedException();
+            Laptop obj =null ;
+            obj= _connection.Laptop.FirstOrDefault(i => i.LaptopID == laptopId);
+            return obj;
         }
 
         public string UpdateLaptop(Laptop laptop)
         {
-            throw new System.NotImplementedException();
+            var obj = _connection.Laptop.FirstOrDefault(i => i.LaptopID == laptop.LaptopID);
+            if (obj != null)
+            {
+                obj.LaptopName = laptop.LaptopName;
+                obj.LaptopDescription= laptop.LaptopDescription;
+                obj.LaptopModel = laptop.LaptopModel;
+
+                _connection.SaveChanges();
+                return "The Laptop  has been updated in Database";
+            }
+            else
+                return "LaptopId is not present";
         }
     }
 }

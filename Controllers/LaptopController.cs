@@ -20,6 +20,20 @@ namespace AAA_ASP.net_core_web_API.Controllers
         {
             return _laptop.AddingLaptop(laptop);
         }
+
+        [HttpGet]
+
+        public Laptop GetLaptop(int laptopId)
+        {
+            return _laptop.GettingLaptop(laptopId);
+        }
+
+        [HttpPut]
+
+        public string UpdatedLaptopDetails(Laptop laptop)
+        {
+            return _laptop.UpdateLaptop(laptop);
+        }
     }
 
 }
