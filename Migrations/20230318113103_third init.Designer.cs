@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AAA_ASP.net_core_web_API.Migrations
 {
     [DbContext(typeof(DatabaseConnection))]
-    [Migration("20230317203828_init")]
-    partial class init
+    [Migration("20230318113103_third init")]
+    partial class thirdinit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

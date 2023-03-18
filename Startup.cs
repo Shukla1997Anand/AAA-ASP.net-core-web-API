@@ -1,3 +1,4 @@
+using AAA_ASP.net_core_web_API.Core;
 using AAA_ASP.net_core_web_API.DatabaseContext;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,6 +35,7 @@ namespace AAA_ASP.net_core_web_API
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "HttpReplApi", Version = "v1" });
             });
+            services.AddScoped<ILaptop, LaptopRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
