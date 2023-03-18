@@ -34,6 +34,11 @@ namespace AAA_ASP.net_core_web_API.Controllers
         {
             return _laptop.UpdateLaptop(laptop);
         }
+        [HttpDelete]
+        public int DeleteLaptop(int LaptopId)
+        {
+            return _laptop.DeletingLaptop(LaptopId);
+        }
     }
 
 }

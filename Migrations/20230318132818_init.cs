@@ -2,7 +2,7 @@
 
 namespace AAA_ASP.net_core_web_API.Migrations
 {
-    public partial class thirdinit : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -28,8 +28,16 @@ namespace AAA_ASP.net_core_web_API.Core
             }
         }
 
-        public string DeleteLaptop(int laptopId)
+        public int DeletingLaptop(int laptopId)
         {
+            Laptop obj = _connection.Laptop.FirstOrDefault(i => i.LaptopID == laptopId);
+            if(obj != null)
+            {
+                _connection.Remove(obj);
+                _connection.SaveChanges();
+                return 1;
+            }
+            return 0;
             throw new System.NotImplementedException();
         }
 
