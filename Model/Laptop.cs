@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace AAA_ASP.net_core_web_API.Model
 {
+    [Serializable]
     public class Laptop
     {
         [Key]

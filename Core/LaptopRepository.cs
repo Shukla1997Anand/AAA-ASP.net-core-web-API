@@ -1,6 +1,8 @@
 ﻿using AAA_ASP.net_core_web_API.DatabaseContext;
 using AAA_ASP.net_core_web_API.Model;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace AAA_ASP.net_core_web_API.Core
 {
@@ -15,6 +17,17 @@ namespace AAA_ASP.net_core_web_API.Core
 
         public string AddingLaptop(Laptop laptop)
         {
+            //Serialization Testing
+           /* FileStream fileStream;
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            if(File.Exists(@".\AAA"))
+            {
+                File.Delete("AAA");
+            }
+            fileStream = File.Create(@".\AAA");
+            binaryFormatter.Serialize(fileStream, laptop);
+            fileStream.Close();*/
+           //--------------------------------------------------------------------------------------------
             var obj=_connection.Laptop.FirstOrDefault(i=>i.LaptopID==laptop.LaptopID);//lamda fun C#
             if (obj == null)
             {
@@ -43,6 +56,17 @@ namespace AAA_ASP.net_core_web_API.Core
 
         public Laptop GettingLaptop(int laptopId)
         {
+            //Deserialization Testing
+           /* FileStream fileStream;
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            Laptop laptop = null;
+            if (File.Exists(@".\AAA"))                                
+            {
+                fileStream = File.OpenRead(@".\AAA");
+                laptop = binaryFormatter.Deserialize(fileStream) as Laptop;
+            }
+            return laptop;*/
+
             Laptop obj =null ;
             obj= _connection.Laptop.FirstOrDefault(i => i.LaptopID == laptopId);
             return obj;
