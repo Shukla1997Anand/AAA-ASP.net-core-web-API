@@ -8,6 +8,7 @@ namespace AAA_ASP.net_core_web_API.Core
         public int DeletingLaptop(int laptopId);
         public string UpdateLaptop(Laptop laptop);  
         public Laptop GettingLaptop(int laptopId);
+        public string SaveToExcel();
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AAA_ASP.net_core_web_API.DatabaseContext;
 using AAA_ASP.net_core_web_API.Model;
 using System.IO;
+using Ganss.Excel;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -70,6 +71,16 @@ namespace AAA_ASP.net_core_web_API.Core
             Laptop obj =null ;
             obj= _connection.Laptop.FirstOrDefault(i => i.LaptopID == laptopId);
             return obj;
+        }
+
+        public string SaveToExcel()
+        {
+            var laptopList = _connection.Laptop.ToList();//sql Laptop table ko List me change
+            ExcelMapper mapper = new ExcelMapper();
+            var LaptopFile = @".\LaptopList.xlsx";
+            mapper.Save(LaptopFile, laptopList, "LaptopsReport", true);
+            return "Laptops List saved To Excel";
+
         }
 
         public string UpdateLaptop(Laptop laptop)

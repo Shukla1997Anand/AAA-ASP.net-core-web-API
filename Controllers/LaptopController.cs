@@ -39,6 +39,13 @@ namespace AAA_ASP.net_core_web_API.Controllers
         {
             return _laptop.DeletingLaptop(LaptopId);
         }
+        [Route("api/Excel")]
+        [HttpGet]
+        public string ExportToExcel()
+        {
+            return _laptop.SaveToExcel();
+            
+        }
     }
 
 }
